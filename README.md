@@ -37,7 +37,7 @@ zcat data/q1_data.tsv.gz|python3 q1_code.py data/to_select.tsv q1_output.tsv
 
 # Quiz Question 2 Plotting a group of lines
 
-The standard input file is q2_data.tsv which when using linux command ```cat q2_data.tsv|head``` will give you an outlook of the data:<br>
+The standard input file is q2_data.tsv which when using linux command ```cat data/q2_data.tsv|head``` will give you an outlook of the data:<br>
 ```
 -1118	1.27553239271999	Cl1
 -1117	1.27696343296042	Cl1
@@ -56,7 +56,7 @@ While using ggplot in the aes argument with x and y axis color was set to the th
 To obtain the desired plot:
 
 ```
-cat q2_data.tsv |Rscript q2_code.r "different_clusters.png" "Relative from center [bp]" "Enrichment over Mean" "MNase fragment profile"
+cat data/q2_data.tsv |Rscript q2_code.r "different_clusters.png" "Relative from center [bp]" "Enrichment over Mean" "MNase fragment profile"
 ```
 
 # Quiz Question 3 Merge multiple files
@@ -84,7 +84,7 @@ Now rest of the file list except the first one is iterated using for loop and th
 
 # Quiz Question 4 Quantile distribution
 
-The standard input file is q4_data.tsv which when using linux command ```head q4_data.tsv``` will give you this output:<br>
+The standard input file is q4_data.tsv which when using linux command ```head data/q4_data.tsv``` will give you this output:<br>
 ```
 43
 25
@@ -105,7 +105,7 @@ The code will save the result to a output file "distributed_quantiles.tsv" , in 
 code for this file is 
 
 ```
-cat q4_data.tsv |python3 group_in_quantiles.py 5
+cat data/q4_data.tsv |python3 group_in_quantiles.py 5
 ```
 The python code is structured in such a way that it can take numbers according to user's desire and label the data with quantiles <br>
 
