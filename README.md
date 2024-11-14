@@ -1,4 +1,4 @@
-# Question 2 Plotting a group of lines
+# Quiz Question 2 Plotting a group of lines
 
 The standard input file is q2_data.tsv which when using linux command ```cat q2_data.tsv|head``` will give you an outlook of the data:<br>
 ```
@@ -22,7 +22,7 @@ To obtain the desired plot:
 cat q2_data.tsv |Rscript q2_code.r "different_clusters.png" "Relative from center [bp]" "Enrichment over Mean" "MNase fragment profile"
 ```
 
-# Quiz Question 3
+# Quiz Question 3 Merge multiple files
 This objective of this code is to generalize the merging of multiple files on the first column values, all you have to do it to change the file names in the data/list_q3.tsv file<br>
 
 In this example there are 2 files to be merged ,path to these files are stored in data/list_q3.tsv<br>
@@ -45,7 +45,7 @@ A little detail about the code , for initializing we have taken the 1st file and
 Now rest of the file list except the first one is iterated using for loop and the current_data is merged with the merged_data using inner_join(function) which takes the two files and by as arguments and later the merged_data was written to a stdout which was stored in join_output.tsv<br>
 
 
-# Question 4 Quantile distribution
+# Quiz Question 4 Quantile distribution
 
 The standard input file is q4_data.tsv which when using linux command ```head q4_data.tsv``` will give you this output:<br>
 ```
