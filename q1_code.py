@@ -1,3 +1,6 @@
+# This code searched the query stored in a reference file(to_select.tsv) in this case and searches the main file (standard input here) and write 
+# only those lines which have the query statement in it. The contents of sys.stdin are explained in the readme file in the git repo
+
 import sys
 import pandas as pd
 
