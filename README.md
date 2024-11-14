@@ -1,3 +1,40 @@
+# Quiz Question 1 Selecting lines from stdin
+
+There are 2 files with this task main file from which the lines have to be pulled and the identifier file where the content which must be there in the main file is present<br>
+For better understanding , ``` head data/to_select.tsv``` will give you the file which contains the elemnts which should be present in the main file:<br>
+```
+ENSG00000180353.10
+ENSG00000180596.7
+ENSG00000266379.6
+ENSG00000262561.1
+ENSG00000284999.1
+ENSG00000274641.1
+ENSG00000231441.1
+ENSG00000267655.1
+ENSG00000209082.1
+```
+To see the main file ```zcat data/q1_data.tsv.gz|head```<br>
+```
+transcript_id(s)	gene_id	length	effective_length	expected_count	TPM	FPKM	posterior_mean_count	posterior_standard_deviation_of_count	pme_TPM	pme_FPKM	TPM_ci_lower_bound	TPM_ci_upper_bound	TPM_coefficient_of_quartile_variation	FPKM_ci_lower_bound	FPKM_ci_upper_bound	FPKM_coefficient_of_quartile_variation
+10904	10904	93.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0	0	0	0	0	0
+12954	12954	94.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0	0	0	0	0	0
+12956	12956	72.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0	0	0	0	0	0
+12958	12958	82.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0	0	0	0	0	0
+12960	12960	73.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0	0	0	0	0	0
+12962	12962	72.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0	0	0	0	0	0
+12964	12964	74.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0.00	0	0	0	0	0	0
+```
+Now the question mentioned that the query in to_select.tsv can we anywhere and is not restricted to 2nd column so i read the main file line wise<br>
+Firstly the contents of to_select.tsv were saved to a list, and while reading the main file , the comtent of 1st line was saved for column header of output file<br>
+Then the the query was matched and only those lines were written to output files which had matching content and so whole file was scanned<br>
+And finally to the output i added the column headers so that it looks well structured<br>
+
+To implement this code write this on the terminal:
+
+```
+zcat data/q1_data.tsv.gz|python3 q1_code.py data/to_select.tsv q1_output.tsv
+```
+
 # Quiz Question 2 Plotting a group of lines
 
 The standard input file is q2_data.tsv which when using linux command ```cat q2_data.tsv|head``` will give you an outlook of the data:<br>
