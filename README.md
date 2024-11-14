@@ -18,7 +18,9 @@ While using ggplot in the aes argument with x and y axis color was set to the th
 
 To obtain the desired plot:
 
-```cat q2_data.tsv |Rscript q2_code.r "different_clusters.png" "Relative from center [bp]" "Enrichment over Mean" "MNase fragment profile"```
+```
+cat q2_data.tsv |Rscript q2_code.r "different_clusters.png" "Relative from center [bp]" "Enrichment over Mean" "MNase fragment profile"
+```
 
 ## Quiz Question 3
 This objective of this code is to generalize the merging of multiple files on the first column values, all you have to do it to change the file names in the data/list_q3.tsv file<br>
@@ -34,7 +36,9 @@ To have a small glimpse at the individual files use ```head data/q3_first.tsv```
 
 To run the code for this particular example we have used output file as join_output.tsv but you can write the desired output name.<br>
 
-``` Rscript join_list_of_files.R data/list_q3.tsv > join_output.tsv ```
+``` 
+Rscript join_list_of_files.R data/list_q3.tsv > join_output.tsv
+```
 
 A little detail about the code , for initializing we have taken the 1st file and stored in the merged_data . Since the files have no column names , col_names have been set to false and default 'V1','V2" and so on will be assigned<br>
 
