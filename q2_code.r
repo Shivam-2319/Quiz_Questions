@@ -1,3 +1,7 @@
+# This is a R plot for when the data is present for different categories in a single file, a little explanation regarding the arguments
+# output file , both the labels and title are only given there.
+#rest of the details of the code and standard input is explained in git rep
+
 library(ggplot2)
 data = read.table(file("stdin"), header = FALSE, sep = "\t", col.names = c("A","B","Category"))
 args = commandArgs(trailingOnly = TRUE)
