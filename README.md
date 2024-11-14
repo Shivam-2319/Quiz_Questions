@@ -1,4 +1,4 @@
-## Question 2 Plotting a group of lines
+# Question 2 Plotting a group of lines
 
 The standard input file is q2_data.tsv which when using linux command ```cat q2_data.tsv|head``` will give you an outlook of the data:<br>
 ```
@@ -22,7 +22,7 @@ To obtain the desired plot:
 cat q2_data.tsv |Rscript q2_code.r "different_clusters.png" "Relative from center [bp]" "Enrichment over Mean" "MNase fragment profile"
 ```
 
-## Quiz Question 3
+#Quiz Question 3
 This objective of this code is to generalize the merging of multiple files on the first column values, all you have to do it to change the file names in the data/list_q3.tsv file<br>
 
 In this example there are 2 files to be merged ,path to these files are stored in data/list_q3.tsv<br>
