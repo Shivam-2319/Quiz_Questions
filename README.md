@@ -120,3 +120,40 @@ Finally i constructed a dictionary with the quartiles and their respective range
 Accessing the quantiles column one by one their respective range was stored in a new list since list are ordered. Finally a range column was added to the dataframe with the values from this new list<br>
 
 While saving index and header were set to None recreate the required output
+
+# Quiz Question 5 Plotting big matrix
+
+The objective of this problem was to understand the advantage of gnuplot over ggplot and matplotlib when it comes to huge chunks of data<br>
+
+To download the big data file :<br>
+```
+curl -JLO https://figshare.com/ndownloader/files/49000657?private_link=9f1324117c2f6e734f2b -O big_data.tsv.gz
+```
+To make it better suited for gnuplot code the first column has to be removed first<br>
+```
+zcat big_data.tsv.gz |cut -f2- > plotting_data.tsv
+```
+These files have not been uploaded here due to their big size<br>
+For the ease of debugging the code , i have taken just a small portion of the big file and tried to plot it<br>
+
+Step1:<br>
+```
+cat plotting_data.tsv| head -n 1000 > demo_data.tsv
+```
+Step2:<br>
+```
+gnuplot -e "input_file = 'demo_data.tsv';output_file = 'demo.eps'" plotter.gp
+```
+Step3:<br>
+```
+ps2pdf demo.eps demo.pdf
+```
+Make sure gnuplot is installed in your sysytem <br>
+
+For this particular example i have only uploaded the demo.pdf because in the main file while performing ```ps2pdf``` step it displayed an error <br>
+```Fontconfig warning: ignoring UTF-8: not a valid region tag```<br>
+After checking i corrected the configuration many times but still the same error persist , due to this error my eps file was not converted to pdf properly and i always recieved and empty image<br>
+I fixed the input file by structuring it properly as a mtrix but still the same issue<br>
+
+
+
